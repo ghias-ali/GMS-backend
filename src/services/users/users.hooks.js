@@ -1,21 +1,54 @@
-const { authenticate } = require('@feathersjs/authentication').hooks
+const { authenticate } = require('@feathersjs/authentication').hooks;
+const search = require('feathers-mongodb-fuzzy-search');
+const verifyHooks = require('feathers-authentication-management').hooks;
+const accountService = require('../authmanagement/notifier');
+const commonHooks = require('feathers-hooks-common');
 
 const {
   hashPassword, protect
-} = require('@feathersjs/authentication-local').hooks
+} = require('@feathersjs/authentication-local').hooks;
 
 module.exports = {
   before: {
-    all: [],
-    find: [authenticate('jwt')],
-    get: [authenticate('jwt')],
-    create: [hashPassword('password'), (context) => {
-      if (context.data && !context.data.hasOwnProperty('area')) {
-        context.data.area = "headquarter";
-      }
+    all: [(context) => {
+      console.log({context});
     }],
+    find: [authenticate('jwt'), 
+    // search(), // full text search on text indexes
+    // search({  // regex search on given fields
+    //   fields: ['name']
+    // })
+  ],
+    get: [authenticate('jwt')],
+    create: [hashPassword('password'), verifyHooks.addVerification(), 
+    (context) => {
+      console.log({context});
+    }
+    // (context) => {
+    //         if (context.data && !context.data.hasOwnProperty('area')) {
+    //           context.data.area = "headquarter";
+    //         }
+    //       }
+        ],
     update: [hashPassword('password'), authenticate('jwt')],
-    patch: [hashPassword('password'), authenticate('jwt')],
+    patch: [
+      commonHooks.iff(
+        commonHooks.isProvider('external'),
+        commonHooks.preventChanges(
+          'email',
+          'isVerified',
+          'verifyToken',
+          'verifyShortToken',
+          'verifyExpires',
+          'verifyChanges',
+          'resetToken',
+          'resetShortToken',
+          'resetExpires'
+        ),
+        hashPassword('password'),
+        authenticate('jwt')
+      )
+    ],
     remove: [authenticate('jwt')]
   },
 
@@ -25,18 +58,14 @@ module.exports = {
       // Always must be the last hook
       protect('password')
     ],
-    find: [context => {
-      // const filteredData = context.result.data.filter(d => {
-      //   console.log({ d });
-      //   // return d._id !== context.params.user._id
-      // })
-      // context.result = {
-      //   ...context.result,
-      //   data: filteredData
-      // }
-    }],
+    find: [],
     get: [],
-    create: [],
+    create: [
+      // context => {
+      //   accountService(context.app).notifier('resendVerifySignup', context.result);
+      // },
+      verifyHooks.removeVerification()
+    ],
     update: [],
     patch: [],
     remove: []
@@ -51,4 +80,4 @@ module.exports = {
     patch: [],
     remove: []
   }
-}
+};
