@@ -1,0 +1,210 @@
+{
+  "type": "after",
+  "arguments": [
+    {
+      "query": {},
+      "route": {},
+      "connection": {
+        "provider": "socketio",
+        "headers": {
+          "host": "localhost:3030",
+          "connection": "Upgrade",
+          "pragma": "no-cache",
+          "cache-control": "no-cache",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
+          "upgrade": "websocket",
+          "origin": "http://localhost:3000",
+          "sec-websocket-version": "13",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "sec-websocket-key": "ianScuR7kGOnmlTsPUfPxA==",
+          "sec-websocket-extensions": "permessage-deflate; client_max_window_bits"
+        },
+        "user": {
+          "_id": "5fe7ab2fbf192937fcfd803a",
+          "email": "alighias37@gmail.com",
+          "name": "ghiasali",
+          "role": 0,
+          "employeeId": "9c1e520b-a2bd-4f69-90bb-89483764cf2d",
+          "area": "headquarter",
+          "createdAt": "2020-12-26T21:29:19.293Z",
+          "updatedAt": "2020-12-26T21:29:19.293Z",
+          "__v": 0
+        },
+        "authentication": {
+          "strategy": "jwt",
+          "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MDkwMjAxOTgsImV4cCI6MTYwOTEwNjU5OCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNWZlN2FiMmZiZjE5MjkzN2ZjZmQ4MDNhIiwianRpIjoiMmUxYjg5YjMtNzBkNy00NWIyLWE3OWQtZTk0MTg1MjkyMDA4In0.iiDrcYN69Orc6P6UPY_X54UFDPlFOwlDUt50yCGk0kg"
+        }
+      },
+      "provider": "socketio",
+      "headers": {
+        "host": "localhost:3030",
+        "connection": "Upgrade",
+        "pragma": "no-cache",
+        "cache-control": "no-cache",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
+        "upgrade": "websocket",
+        "origin": "http://localhost:3000",
+        "sec-websocket-version": "13",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "sec-websocket-key": "ianScuR7kGOnmlTsPUfPxA==",
+        "sec-websocket-extensions": "permessage-deflate; client_max_window_bits"
+      },
+      "user": {
+        "_id": "5fe7ab2fbf192937fcfd803a",
+        "email": "alighias37@gmail.com",
+        "name": "ghiasali",
+        "role": 0,
+        "employeeId": "9c1e520b-a2bd-4f69-90bb-89483764cf2d",
+        "area": "headquarter",
+        "createdAt": "2020-12-26T21:29:19.293Z",
+        "updatedAt": "2020-12-26T21:29:19.293Z",
+        "__v": 0
+      },
+      "authentication": {
+        "strategy": "jwt",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MDkwMjAxOTgsImV4cCI6MTYwOTEwNjU5OCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNWZlN2FiMmZiZjE5MjkzN2ZjZmQ4MDNhIiwianRpIjoiMmUxYjg5YjMtNzBkNy00NWIyLWE3OWQtZTk0MTg1MjkyMDA4In0.iiDrcYN69Orc6P6UPY_X54UFDPlFOwlDUt50yCGk0kg"
+      }
+    }
+  ],
+  "service": {
+    "options": {
+      "id": "_id",
+      "events": [],
+      "paginate": { "default": 10, "max": 50 },
+      "multi": false,
+      "filters": {},
+      "whitelist": ["$regex", "$and"]
+    },
+    "discriminatorKey": "__t",
+    "discriminators": {},
+    "lean": true,
+    "overwrite": true,
+    "useEstimatedDocumentCount": false,
+    "methods": {
+      "find": ["params"],
+      "get": ["id", "params"],
+      "create": ["data", "params"],
+      "update": ["id", "data", "params"],
+      "patch": ["id", "data", "params"],
+      "remove": ["id", "params"]
+    },
+    "_events": {},
+    "_eventsCount": 4
+  },
+  "method": "find",
+  "path": "users",
+  "params": {
+    "query": {},
+    "route": {},
+    "connection": {
+      "provider": "socketio",
+      "headers": {
+        "host": "localhost:3030",
+        "connection": "Upgrade",
+        "pragma": "no-cache",
+        "cache-control": "no-cache",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
+        "upgrade": "websocket",
+        "origin": "http://localhost:3000",
+        "sec-websocket-version": "13",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "sec-websocket-key": "ianScuR7kGOnmlTsPUfPxA==",
+        "sec-websocket-extensions": "permessage-deflate; client_max_window_bits"
+      },
+      "user": {
+        "_id": "5fe7ab2fbf192937fcfd803a",
+        "email": "alighias37@gmail.com",
+        "name": "ghiasali",
+        "role": 0,
+        "employeeId": "9c1e520b-a2bd-4f69-90bb-89483764cf2d",
+        "area": "headquarter",
+        "createdAt": "2020-12-26T21:29:19.293Z",
+        "updatedAt": "2020-12-26T21:29:19.293Z",
+        "__v": 0
+      },
+      "authentication": {
+        "strategy": "jwt",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MDkwMjAxOTgsImV4cCI6MTYwOTEwNjU5OCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNWZlN2FiMmZiZjE5MjkzN2ZjZmQ4MDNhIiwianRpIjoiMmUxYjg5YjMtNzBkNy00NWIyLWE3OWQtZTk0MTg1MjkyMDA4In0.iiDrcYN69Orc6P6UPY_X54UFDPlFOwlDUt50yCGk0kg"
+      }
+    },
+    "provider": "socketio",
+    "headers": {
+      "host": "localhost:3030",
+      "connection": "Upgrade",
+      "pragma": "no-cache",
+      "cache-control": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
+      "upgrade": "websocket",
+      "origin": "http://localhost:3000",
+      "sec-websocket-version": "13",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "sec-websocket-key": "ianScuR7kGOnmlTsPUfPxA==",
+      "sec-websocket-extensions": "permessage-deflate; client_max_window_bits"
+    },
+    "user": {
+      "_id": "5fe7ab2fbf192937fcfd803a",
+      "email": "alighias37@gmail.com",
+      "password": "$2a$10$oALMe3dcUESp9Yu0/l2jS.ko3j.qK6bQn2G5RxUeUCvKB074ycBcO",
+      "name": "ghiasali",
+      "role": 0,
+      "employeeId": "9c1e520b-a2bd-4f69-90bb-89483764cf2d",
+      "area": "headquarter",
+      "createdAt": "2020-12-26T21:29:19.293Z",
+      "updatedAt": "2020-12-26T21:29:19.293Z",
+      "__v": 0
+    },
+    "authentication": {
+      "strategy": "jwt",
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MDkwMjAxOTgsImV4cCI6MTYwOTEwNjU5OCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNWZlN2FiMmZiZjE5MjkzN2ZjZmQ4MDNhIiwianRpIjoiMmUxYjg5YjMtNzBkNy00NWIyLWE3OWQtZTk0MTg1MjkyMDA4In0.iiDrcYN69Orc6P6UPY_X54UFDPlFOwlDUt50yCGk0kg",
+      "payload": {
+        "iat": 1609020198,
+        "exp": 1609106598,
+        "aud": "https://yourdomain.com",
+        "iss": "feathers",
+        "sub": "5fe7ab2fbf192937fcfd803a",
+        "jti": "2e1b89b3-70d7-45b2-a79d-e94185292008"
+      }
+    },
+    "authenticated": true
+  },
+  "result": {
+    "total": 1,
+    "limit": 10,
+    "skip": 0,
+    "data": [
+      {
+        "_id": "5fe7ab2fbf192937fcfd803a",
+        "email": "alighias37@gmail.com",
+        "name": "ghiasali",
+        "role": 0,
+        "employeeId": "9c1e520b-a2bd-4f69-90bb-89483764cf2d",
+        "area": "headquarter",
+        "createdAt": "2020-12-26T21:29:19.293Z",
+        "updatedAt": "2020-12-26T21:29:19.293Z",
+        "__v": 0
+      }
+    ]
+  },
+  "dispatch": {
+    "total": 1,
+    "limit": 10,
+    "skip": 0,
+    "data": [
+      {
+        "_id": "5fe7ab2fbf192937fcfd803a",
+        "email": "alighias37@gmail.com",
+        "name": "ghiasali",
+        "role": 0,
+        "employeeId": "9c1e520b-a2bd-4f69-90bb-89483764cf2d",
+        "area": "headquarter",
+        "createdAt": "2020-12-26T21:29:19.293Z",
+        "updatedAt": "2020-12-26T21:29:19.293Z",
+        "__v": 0
+      }
+    ]
+  }
+}
