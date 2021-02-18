@@ -7,9 +7,12 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const schema = new Schema({
-    userId: { type: String, required: true },
-    employeeId: { type: String, required: true },
     status: { type: Number, required: true }, // 0 pending  | 1 accepted | 2 rejected
+    userInfo: { type: Object },
+    gridInfo: { type: Object },
+    rejectedBy: { type: Object },
+
+
   }, {
     timestamps: true
   });
