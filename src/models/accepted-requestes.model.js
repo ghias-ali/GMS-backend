@@ -10,7 +10,7 @@ module.exports = function (app) {
     status: { type: Number, required: true }, // 0 pending  | 1 accepted | 2 rejected
     userInfo: { type: Object },
     gridInfo: { type: Object },
-    acceptedBy: { type: Object },
+    acceptedBy: { type: Object }
   }, {
     timestamps: true
   });
