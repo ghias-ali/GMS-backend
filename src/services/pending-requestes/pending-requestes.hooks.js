@@ -3,7 +3,15 @@ const { authenticate } = require('@feathersjs/authentication').hooks;
 module.exports = {
   before: {
     all: [authenticate('jwt')],
-    find: [],
+    find: [(context) => {
+      context.params.query =
+        context.params.query.byUser === true
+          ?( delete context.params.query.byUser, {
+              ...context.params.query,
+              "userInfo._id": `${context.params.user._id}`,
+            } )
+          : { ...context.params.query };
+    },],
     get: [],
     create: [async (context) => {
       context.data.userInfo = context.params.user;
