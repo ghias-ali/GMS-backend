@@ -17,7 +17,6 @@ module.exports = {
                 "userInfo._id": `${context.params.user._id}`,
               } )
             : { ...context.params.query };
-            console.log(context.params.query)
       },
     ],
     get: [],
