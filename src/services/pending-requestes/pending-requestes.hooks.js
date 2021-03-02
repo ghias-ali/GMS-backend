@@ -8,7 +8,7 @@ module.exports = {
         context.params.query.byUser === true
           ?( delete context.params.query.byUser, {
               ...context.params.query,
-              "userInfo._id": `${context.params.user._id}`,
+              "userInfo._id": context.params.user._id,
             } )
           : { ...context.params.query };
     },],
