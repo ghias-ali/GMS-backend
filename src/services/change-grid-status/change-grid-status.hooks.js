@@ -10,23 +10,28 @@ module.exports = {
       async (context) => {
         try {
           context.data.userInfo = context.params.user;
-          const res = await context.app.services.grids.get(context.data.gridId);
-          context.data.gridInfo = res;
+          console.log(context.data.currentStatus);
+          const status = {currentStatus:context.data.currentStatus};
+          const res = await context.app.services.grids.patch(context.data.gridId,status);
+          const res1 = await context.app.services.grids.get(context.data.gridId);
+
+          context.data.gridInfo = res1;
+
           const data = {
             currentStatus: context.data.currentStatus,
             gridId: context.data.gridInfo._id,
-            user: context.data.userInfo,
-            accessToken: context.params.headers.authorization,
+           
           };
           await axios({
             method: "post",
-            url: `https://o2re5hc0tg.execute-api.us-west-2.amazonaws.com/dev/toggle-iot`,
+            url: `https://o2re5hc0tg.execute-api.us-west-2.amazonaws.com/dev/publish-iot`,
             headers: {
               "Content-Type": "application/json",
             },
             data: JSON.stringify(data),
           });
         } catch (err) {
+          console.log(err);
           throw err;
         }
       },

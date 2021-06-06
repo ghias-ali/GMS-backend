@@ -13,12 +13,12 @@ module.exports = function (app) {
     role: { type: Number, },//0 for admin 1 for employee
     area: { type: String, defaultValue: "headquarter" },
     employeeId: { type: String, unique: true },
-    isVerified: { type: Boolean },
-    verifyToken: { type: String },
-    verifyExpires: { type: Date },
-    verifyChanges: { type: Object },
-    resetToken: { type: String },
-    resetExpires: { type: Date }
+    // isVerified: { type: Boolean },
+    // verifyToken: { type: String },
+    // verifyExpires: { type: Date },
+    // verifyChanges: { type: Object },
+    // resetToken: { type: String },
+    // resetExpires: { type: Date }
   }, {
     timestamps: true
   })
