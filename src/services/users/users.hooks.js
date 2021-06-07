@@ -10,9 +10,7 @@ const {
 
 module.exports = {
   before: {
-    all: [(context) => {
-      console.log({context});
-    }],
+    all: [],
     find: [authenticate('jwt'), 
     // search(), // full text search on text indexes
     // search({  // regex search on given fields
@@ -21,14 +19,14 @@ module.exports = {
   ],
     get: [authenticate('jwt')],
     create: [hashPassword('password'), verifyHooks.addVerification(), 
-    (context) => {
-      console.log({context});
-    }
     // (context) => {
-    //         if (context.data && !context.data.hasOwnProperty('area')) {
-    //           context.data.area = "headquarter";
-    //         }
-    //       }
+    //   console.log({context});
+    // }
+    // // (context) => {
+    // //         if (context.data && !context.data.hasOwnProperty('area')) {
+    // //           context.data.area = "headquarter";
+    // //         }
+    // //       }
         ],
     update: [hashPassword('password'), authenticate('jwt')],
     patch: [

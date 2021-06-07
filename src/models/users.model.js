@@ -7,10 +7,10 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient')
   const schema = new mongooseClient.Schema({
 
-    email: { type: String, unique: true, lowercase: true },
-    password: { type: String },
-    name: { type: String, lowercase: true },
-    role: { type: Number, },//0 for admin 1 for employee
+    email: { type: String, unique: true, lowercase: true,required: true },
+    password: { type: String,required: true },
+    name: { type: String, lowercase: true,required: true },
+    role: { type: Number,required: true },//0 for admin 1 for employee
     area: { type: String, defaultValue: "headquarter" },
     employeeId: { type: String, unique: true },
     // isVerified: { type: Boolean },
