@@ -28,5 +28,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/backend"
+  "mongodb": "mongodb+srv://admin:admin@gms@cluster0.pxdcf.mongodb.net/backend?retryWrites=true&w=majority"
 }
