@@ -10,10 +10,7 @@
     "entity": "user",
     "service": "users",
     "secret": "7ZWe0uGAC2lKfSjSMZ3dZY7qC0Y=",
-    "authStrategies": [
-      "jwt",
-      "local"
-    ],
+    "authStrategies": ["jwt", "local"],
     "jwtOptions": {
       "header": {
         "typ": "access"

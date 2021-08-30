@@ -14,18 +14,50 @@ module.exports = {
           const res1 = await context.app.services.grids.get(
             context.data.gridId
           );
-          console.log({responsee: res1});
+          console.log({ responsee: res1 });
           const res = await context.app.services.grids.patch(
             context.data.gridId,
             status
           );
 
           context.data.gridInfo = res1;
-          console.log({res, res1});
-          const data = {
-            currentStatus: context.data.currentStatus,
-            gridId: context.data.gridInfo._id,
-          };
+          // 60ca310c3af27b07d1a209f4 phase 6 s1
+          // 612d1be73af27b07d1a20a0c phase 3 s2
+          // 612d1bd43af27b07d1a20a0b phase 5 s3
+          // 60ca3a493af27b07d1a209fb phase 4 s4
+          let data = {};
+          if (context.data.gridId === "60ca310c3af27b07d1a209f4") {
+            data = {
+              s1: context.data.currentStatus,
+              s2: 7,
+              s3: 7,
+              s4: 7,
+            };
+          }
+          if (context.data.gridId === "612d1be73af27b07d1a20a0c") {
+            data = {
+              s1: 7,
+              s2: context.data.currentStatus,
+              s3: 7,
+              s4: 7,
+            };
+          }
+          if (context.data.gridId === "612d1bd43af27b07d1a20a0b") {
+            data = {
+              s1: 7,
+              s2: 7,
+              s3: context.data.currentStatus,
+              s4: 7,
+            };
+          }
+          if (context.data.gridId === "60ca3a493af27b07d1a209fb") {
+            data = {
+              s1: 7,
+              s2: 7,
+              s3: 7,
+              s4: context.data.currentStatus,
+            };
+          }
 
           await axios({
             method: "post",

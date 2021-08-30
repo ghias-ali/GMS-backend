@@ -1,28 +1,35 @@
-const { authenticate } = require('@feathersjs/authentication').hooks;
+const { authenticate } = require("@feathersjs/authentication").hooks;
 
 module.exports = {
   before: {
-    all: [authenticate('jwt')],
-    find: [(context) => {
-      context.params.query =
-        context.params.query.byUser === true
-          ?( delete context.params.query.byUser, {
-              ...context.params.query,
-              "userInfo._id": context.params.user._id,
-            } )
-          : { ...context.params.query };
-    },],
+    all: [authenticate("jwt")],
+    find: [
+      (context) => {
+        context.params.query =
+          context.params.query.byUser === true
+            ? (delete context.params.query.byUser,
+              {
+                ...context.params.query,
+                "userInfo._id": context.params.user._id,
+              })
+            : { ...context.params.query };
+      },
+    ],
     get: [],
-    create: [async (context) => {
-      context.data.userInfo = context.params.user;
-      await context.app.services.grids.get(context.data.gridId).then(res => {
-        context.data.gridInfo = res
-      }).catch(err => {
-      })
-    }],
+    create: [
+      async (context) => {
+        context.data.userInfo = context.params.user;
+        await context.app.services.grids
+          .get(context.data.gridId)
+          .then((res) => {
+            context.data.gridInfo = res;
+          })
+          .catch((err) => {});
+      },
+    ],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   after: {
@@ -32,7 +39,7 @@ module.exports = {
     create: [],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   error: {
@@ -42,6 +49,6 @@ module.exports = {
     create: [],
     update: [],
     patch: [],
-    remove: []
-  }
+    remove: [],
+  },
 };
